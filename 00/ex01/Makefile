@@ -1,12 +1,9 @@
-NAME = phonebook
 CC = -clang++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 SRCS = 
 OBJ = $(SRCS:.cpp=.o)
 
-all : $(NAME)
-
-$(NAME): $(OBJ) $(LIB)
+all : $(OBJ) $(LIB)
 	$(CC) $(LFLAG) $(LIB) $(OBJ) -o $(NAME)
 
 clean :

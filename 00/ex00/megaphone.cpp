@@ -16,9 +16,10 @@ int	main(int ac, char **av)
 			c = 0;
 			while (av[ac][c])
 			{
-				av[ac][c] = toupper(av[ac][c]);
+				av[ac][c] = std::toupper(av[ac][c]);
 				c++;
 			}
+			std::cout << av[ac];
 			ac++;
 		}
 	}

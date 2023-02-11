@@ -1,18 +1,18 @@
-CC = clang++
-NAME = megaphone
+CXX = clang++
+NAME = PhoneBook
 CFLAGS = -Wall -Wextra -Werror -std
 
-SRCS = ./megaphone.cpp
+SRCS = ./PhoneBook.cpp ./Contact.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
 all : $(NAME)
 
 $(NAME): $(OBJS) $(HEADER)
-	$(CC) $(OBJS) -o $(NAME)
+	$(CXX) $(OBJS) -o $(NAME)
 
 %.o : %.c
-	$(CC) $(CFLAGS) -c $<
+	$(CXX) $(CFLAGS) -c $<
 
 clean :
 	rm -rf $(OBJS)

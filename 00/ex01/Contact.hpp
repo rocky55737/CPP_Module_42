@@ -20,7 +20,10 @@ public:
 	std::string	getNickName();
 	std::string	getPhoneNumber();
 	std::string	getDarkestSecret();
+	int	getEmptyFlag();
+	void	setEmptyFlag(int new_flag);
 	void	setContact();
+	void	unsetContact();
 };
 
 #endif

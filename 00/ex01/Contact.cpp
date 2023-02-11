@@ -58,6 +58,16 @@ void	Contact::setContact()
 	this->empty_flag = 0;
 }
 
+void	Contact::unsetContact()
+{
+	this->first_name = "";
+	this->last_name = "";
+	this->nickname = "";
+	this->phone_number = "";
+	this->darkest_secret = "";
+	this->empty_flag = 1;
+}
+
 std::string Contact::getFirstName()
 {
 	return (this->first_name);
@@ -81,4 +91,9 @@ std::string Contact::getPhoneNumber()
 std::string Contact::getDarkestSecret()
 {
 	return (this->darkest_secret);
+}
+
+int	Contact::getEmptyFlag()
+{
+	return (this->empty_flag);
 }

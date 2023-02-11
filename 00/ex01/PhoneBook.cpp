@@ -1,12 +1,15 @@
 #include "PhoneBook.hpp"
-
-PhoneBook::~PhoneBook()
-{
-	delete this->contacts;
-}
+#include <iostream>
 
 void	PhoneBook::add()
 {
-	int	empty_index = 0;
-	
+	this->contacts[this->fixed_index % 8].setContact();
+	fixed_index++;
+}
+
+void	PhoneBook::search()
+{
+	//show all info
+	//wait input
+	//show more info of specific row
 }

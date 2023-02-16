@@ -39,8 +39,24 @@ void	PhoneBook::add()
 
 void	PhoneBook::showAll()
 {
+	std::string info[3];
+
 	for (int i = 0; i < 8 && !this->contacts[i].getEmptyFlag(); i++)
-		std::cout << std::setw(10) << i + 1 << "|" << std::setw(10) << this->contacts[i].getFirstName() << "|" << std::setw(10) << this->contacts[i].getLastName() << "|" << std::setw(10) << this->contacts[i].getNickName() << std::endl;
+	{
+		std::cout << std::setw(10) << i + 1;
+		info[0] = this->contacts[i].getFirstName();
+		info[1] = this->contacts[i].getLastName();
+		info[2] = this->contacts[i].getNickName();
+		for (int cnt = 0; cnt < 3; cnt++)
+		{
+			std::cout << "|";
+			if (info[cnt].length() > 10)
+				std::cout << info[cnt].substr(0, 9) << '.';
+			else
+				std::cout << std::setw(10) << info[cnt];
+		}
+		std::cout << std::endl;
+	}
 }
 
 int	PhoneBook::checkValidIndex(std::string index)

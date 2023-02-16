@@ -2,13 +2,8 @@
 #include <iostream>
 #include <string>
 
-Contact::Contact() : first_name(""), last_name(""), nickname(""), phone_number(""), darkest_secret("")
+Contact::Contact() : first_name(""), last_name(""), nickname(""), phone_number(""), darkest_secret(""), empty_flag(1)
 {}
-
-Contact::~Contact()
-{
-	delete this;
-}
 
 void	Contact::setContact()
 {
@@ -67,6 +62,11 @@ void	Contact::unsetContact()
 	this->phone_number = "";
 	this->darkest_secret = "";
 	this->empty_flag = 1;
+}
+
+Contact *Contact::getContact()
+{
+	return (this);
 }
 
 std::string Contact::getFirstName()

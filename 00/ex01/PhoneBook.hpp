@@ -6,13 +6,15 @@
 class PhoneBook{
 private:
 	Contact contacts[8];
-	std::string	commands[3] = {"ADD", "SEARCH", "EXIT"};
-	int	fixed_index = 0;
+	std::string	commands[3];
+	int	fixed_index;
 public:
-	void	pb_init();
+	PhoneBook();
+	void	pbInit();
 	void	add();
 	void	search();
-	void	exit();
+	void	showAll();
+	int		checkValidIndex(std::string index);
 };
 
 #endif

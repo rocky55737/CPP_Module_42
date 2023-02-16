@@ -11,15 +11,15 @@ private:
 	std::string nickname;
 	std::string phone_number;
 	std::string darkest_secret;
-	int	empty_flag = 1;
+	int	empty_flag;
 public:
 	Contact();
-	~Contact();
 	std::string	getFirstName();
 	std::string	getLastName();
 	std::string	getNickName();
 	std::string	getPhoneNumber();
 	std::string	getDarkestSecret();
+	Contact *getContact();
 	int	getEmptyFlag();
 	void	setContact();
 	void	unsetContact();

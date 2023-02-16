@@ -1,27 +1,33 @@
 #include "PhoneBook.hpp"
 #include <iostream>
+#include <iomanip>
+#include <sstream>
 
-void	PhoneBook::pb_init()
+PhoneBook::PhoneBook() : fixed_index(0)
 {
-	string	cmd;
+	commands[0] = "ADD";
+	commands[1] = "SEARCH";
+	commands[2] = "EXIT";
+	std::cout << "started" << std::endl;
+}
+
+void	PhoneBook::pbInit()
+{
+	std::string	cmd;
 
 	cmd = "started";
-	while (cmd == "EXIT")
+	while (cmd != "EXIT")
 	{
 		std::cout << "1. ADD   2. SEARCH   3. EXIT" << std::endl;
 		std::getline(std::cin, cmd);
-		switch (cmd)
-		{
-		case "ADD":
-			PhoneBook::add();
-			break;
-		case "SEARCH":
-			PhoneBook::search();
-			break;
-		default:
+		if (cmd == "EXIT")
+			return;
+		if (cmd == "ADD")
+			this->add();
+		else if (cmd == "SEARCH")
+			this->search();
+		else
 			std::cout << "Insert the command!" << std::endl;
-			break;
-		}
 	}
 }
 
@@ -31,16 +37,45 @@ void	PhoneBook::add()
 	fixed_index++;
 }
 
+void	PhoneBook::showAll()
+{
+	for (int i = 0; i < 8 && !this->contacts[i].getEmptyFlag(); i++)
+		std::cout << std::setw(10) << i + 1 << "|" << std::setw(10) << this->contacts[i].getFirstName() << "|" << std::setw(10) << this->contacts[i].getLastName() << "|" << std::setw(10) << this->contacts[i].getNickName() << std::endl;
+}
+
+int	PhoneBook::checkValidIndex(std::string index)
+{
+	int	num = 0;
+
+	std::istringstream(index) >> num;
+	if (num >= 1 && num <= 8 && !this->contacts[num - 1].getEmptyFlag())
+		return (1);
+	return (0);
+}
+
 void	PhoneBook::search()
 {
-	string	cmd;
+	std::string	cmd;
 	int	index;
 
 	cmd = "search";
+	this->showAll();
 	while (cmd != "BACK")
 	{
-		//show all
-		std::cin >> cmd;
-		
+		std::getline(std::cin, cmd);
+		if (cmd == "BACK")
+			return;
+		if (this->checkValidIndex(cmd))
+		{
+			std::istringstream(cmd) >> index;
+			std::cout << "first name: " << this->contacts[index - 1].getFirstName() << std::endl;
+			std::cout << "last name: " << this->contacts[index - 1].getLastName() << std::endl;
+			std::cout << "nickname: " << this->contacts[index - 1].getNickName() << std::endl;
+			std::cout << "phone number: " << this->contacts[index - 1].getPhoneNumber() << std::endl;
+			std::cout << "darkest secret: " << this->contacts[index - 1].getDarkestSecret() << std::endl;
+			continue;
+		}
+		std::cout << "invalid index err" << std::endl;
+		showAll();
 	}
 }

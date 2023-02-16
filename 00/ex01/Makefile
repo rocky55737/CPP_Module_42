@@ -2,7 +2,7 @@ CXX = clang++
 NAME = PhoneBook
 CFLAGS = -Wall -Wextra -Werror -std
 
-SRCS = ./PhoneBook.cpp ./Contact.cpp
+SRCS = ./PhoneBook.cpp ./Contact.cpp ./main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

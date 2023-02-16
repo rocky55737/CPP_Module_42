@@ -9,6 +9,7 @@ private:
 	std::string	commands[3] = {"ADD", "SEARCH", "EXIT"};
 	int	fixed_index = 0;
 public:
+	void	pb_init();
 	void	add();
 	void	search();
 	void	exit();

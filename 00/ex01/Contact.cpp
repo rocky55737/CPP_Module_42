@@ -1,5 +1,6 @@
 #include "Contact.hpp"
 #include <iostream>
+#include <string>
 
 Contact::Contact() : first_name(""), last_name(""), nickname(""), phone_number(""), darkest_secret("")
 {}
@@ -19,31 +20,31 @@ void	Contact::setContact()
 		{
 		case 0:
 			std::cout << "First name: ";
-			std::cin >> this->first_name;
+			std::getline(std::cin, this->first_name);
 			if (this->first_name.length() == 0)
 				null_flag = 1;
 			break;
 		case 1:
 			std::cout << "Last name: ";
-			std::cin >> this->last_name;
+			std::getline(std::cin, this->last_name);
 			if (this->last_name.length() == 0)
 				null_flag = 1;
 			break;
 		case 2:
 			std::cout << "Nickname: ";
-			std::cin >> this->nickname;
+			std::getline(std::cin, this->nickname);
 			if (this->nickname.length() == 0)
 				null_flag = 1;
 			break;
 		case 3:
 			std::cout << "Phone number: ";
-			std::cin >> this->phone_number;
+			std::getline(std::cin, this->phone_number);
 			if (this->phone_number.length() == 0)
 				null_flag = 1;
 			break;
 		case 4:
 			std::cout << "Darkest secret: ";
-			std::cin >> this->darkest_secret;
+			std::getline(std::cin, this->darkest_secret);
 			if (this->darkest_secret.length() == 0)
 				null_flag = 1;
 			break;

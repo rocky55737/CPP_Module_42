@@ -6,10 +6,10 @@ Zombie::Zombie(std::string zombie_name) : name(zombie_name)
 
 Zombie::~Zombie()
 {
-	std::cout << this->getName() << "is dead" << endl;
+	std::cout << this->getName() << "is dead" << std::endl;
 }
 
-void	Zombie::getName(void)
+std::string	Zombie::getName(void)
 {
 	return (this->name);
 }

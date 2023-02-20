@@ -1,6 +1,6 @@
 CC = clang++
 NAME = Moarbrainz
-CFLAGS = -Wall -Wextra -Werror -std
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = ./Zombie.cpp ./main.cpp ./zombieHorde.cpp
 

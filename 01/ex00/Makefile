@@ -1,6 +1,6 @@
 CXX = clang++
 NAME = BraiiiiiiinnnzzzZ
-CFLAGS = -Wall -Wextra -Werror -std
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = ./main.cpp ./Zombie.cpp ./newZombie.cpp ./randomChump.cpp
 

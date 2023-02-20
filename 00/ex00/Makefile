@@ -1,6 +1,6 @@
 CXX = clang++
 NAME = megaphone
-CFLAGS = -Wall -Wextra -Werror -std
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = ./megaphone.cpp
 

@@ -1,8 +1,8 @@
 CC = clang++
-NAME = megaphone
+NAME = Thisisbrain
 CFLAGS = -Wall -Wextra -Werror -std
 
-SRCS = ./megaphone.cpp
+SRCS = ./main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

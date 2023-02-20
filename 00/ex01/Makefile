@@ -1,6 +1,6 @@
 CXX = clang++
 NAME = PhoneBook
-CFLAGS = -Wall -Wextra -Werror -std
+CFLAGS = -Wall -Wextra -Werror -std=98
 
 SRCS = ./PhoneBook.cpp ./Contact.cpp ./main.cpp
 

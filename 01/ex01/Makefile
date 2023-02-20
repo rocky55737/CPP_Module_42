@@ -1,8 +1,8 @@
 CC = clang++
-NAME = megaphone
+NAME = Moarbrainz
 CFLAGS = -Wall -Wextra -Werror -std
 
-SRCS = ./megaphone.cpp
+SRCS = ./Zombie.cpp ./main.cpp ./zombieHorde.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

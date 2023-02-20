@@ -2,7 +2,7 @@ CXX = clang++
 NAME = BraiiiiiiinnnzzzZ
 CFLAGS = -Wall -Wextra -Werror -std
 
-SRCS = ./main.cpp ./Zombie.cpp
+SRCS = ./main.cpp ./Zombie.cpp ./newZombie.cpp ./randomChump.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

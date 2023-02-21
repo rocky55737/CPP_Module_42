@@ -1,8 +1,8 @@
 CC = clang++
-NAME = megaphone
-CFLAGS = -Wall -Wextra -Werror -std
+NAME = Violence
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = ./megaphone.cpp
+SRCS = ./HumanA.cpp ./HumanB.cpp ./main.cpp ./Weapon.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

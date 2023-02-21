@@ -1,8 +1,8 @@
 CC = clang++
-NAME = megaphone
-CFLAGS = -Wall -Wextra -Werror -std
+NAME = sed
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = ./megaphone.cpp
+SRCS = ./main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

@@ -2,6 +2,7 @@
 # define HUMANB_HPP
 
 # include "Weapon.hpp"
+# include <iostream>
 
 class HumanB
 {
@@ -11,7 +12,7 @@ private:
 public:
 	HumanB(std::string name_init);
 	void	attack(void);
-	void	setWeapon(Weapon *new_weapon);
-}
+	void	setWeapon(Weapon &new_weapon);
+};
 
 #endif

@@ -1,7 +1,7 @@
 #include "HumanA.hpp"
 #include <iostream>
 
-HumanA::HumanA(std::string name_init, Weapon& weapon_ref) : name(name_init) weapon(weapon_ref)
+HumanA::HumanA(std::string name_init, Weapon& weapon_ref) : name(name_init), weapon(weapon_ref)
 {}
 
 void	HumanA::attack(void)

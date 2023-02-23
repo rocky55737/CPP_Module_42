@@ -1,6 +1,14 @@
 #include "Harl.hpp"
 #include <iostream>
 
+Harl::Harl()
+{
+	this->all_func[0] = &Harl::debug;
+	this->all_func[1] = &Harl::info;
+	this->all_func[2] = &Harl::warning;
+	this->all_func[3] = &Harl::error;
+}
+
 void	Harl::debug(void)
 {
 	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
@@ -8,14 +16,12 @@ void	Harl::debug(void)
 
 void	Harl::info(void)
 {
-	std::cout << "I cannot believe adding extra bacon costs more money. You didn't put
-enough bacon in my burger! If you did, I wouldn't be asking for more!" << std::endl;
+	std::cout << "I cannot believe adding extra bacon costs more money. You didn't put enough bacon in my burger! If you did, I wouldn't be asking for more!" << std::endl;
 }
 
 void	Harl::warning(void)
 {
-	std::cout << "I think I deserve to have some extra bacon for free. I've been coming for
-years whereas you started working here since last month." << std::endl;
+	std::cout << "I think I deserve to have some extra bacon for free. I've been coming for years whereas you started working here since last month." << std::endl;
 }
 
 void	Harl::error(void)
@@ -26,16 +32,12 @@ void	Harl::error(void)
 void	Harl::complain(std::string level)
 {
 	std::string	all[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-
-	all_func[0] = Harl::debug;
-	all_func[1] = Harl::info;
-	all_func[2] = Harl::warning;
-	all_func[3] = Harl::error;
+	
 	for (int i = 0; i < 4; i++)
 	{
 		if (all[i] == level)
 		{
-			all_func[i]();
+			(this->*all_func[i])();
 			return ;
 		}
 	}

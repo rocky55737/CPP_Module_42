@@ -2,17 +2,18 @@
 
 int main (void)
 {
-	Harl harl;
+	Harl *harl = new Harl();
 
 	std::cout << "<DEBUG>" << std::endl;
-	harl.complain("DEBUG");
+	harl->complain("DEBUG");
 	std::cout << "<INFO>" << std::endl;
-	harl.complain("INFO");
+	harl->complain("INFO");
 	std::cout << "<WARNING>" << std::endl;
-	harl.complain("WARNING");
+	harl->complain("WARNING");
 	std::cout << "<ERROR>" << std::endl;
-	harl.complain("ERROR");
+	harl->complain("ERROR");
 	std::cout << "<NOT EXIST>" << std::endl;
-	harl.complain("aa");
+	harl->complain("aa");
+	delete harl;
 	return 0;
 }

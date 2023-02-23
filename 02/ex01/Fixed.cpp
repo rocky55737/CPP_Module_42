@@ -1,12 +1,12 @@
 #include "Fixed.hpp"
-#include <iostream>
+# include <cmath>
 
 Fixed::Fixed() : num(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed& Fixed::operator=(Fixed const& copy)
+Fixed& Fixed::operator=(const Fixed& copy)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	this->num = copy.getRawBits();

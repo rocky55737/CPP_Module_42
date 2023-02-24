@@ -2,27 +2,21 @@
 # include <cmath>
 
 Fixed::Fixed() : num(0)
-{
-	std::cout << "Default constructor called" << std::endl;
-}
+{}
 
 Fixed& Fixed::operator=(const Fixed& copy)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
 	this->num = copy.getRawBits();
 	return *this;
 }
 
 Fixed::Fixed(const Fixed& copy)
 {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
 }
 
 Fixed::~Fixed()
-{
-	std::cout << "Destructor called" << std::endl;
-}
+{}
 
 int Fixed::getRawBits(void) const
 {
@@ -35,14 +29,10 @@ void Fixed::setRawBits(int const raw)
 }
 
 Fixed::Fixed(int num_init) : num(num_init * 256)
-{
-	std::cout << "Int constructor called" << std::endl;
-}
+{}
 
 Fixed::Fixed(float num_init) : num(roundf(num_init * 256))
-{
-	std::cout << "Float constructor called" << std::endl;
-}
+{}
 
 int Fixed::toInt() const
 {
@@ -103,18 +93,58 @@ Fixed Fixed::operator-(const Fixed& copy) const
 
 Fixed Fixed::operator*(const Fixed& copy) const
 {
-	Fixed temp(this->num * copy.num / 256);
+	Fixed temp((float)this->num / 256 * (float)copy.num / 256);
 	return (temp);
 }
 
 Fixed Fixed::operator/(const Fixed& copy) const
 {
-	Fixed temp(this->num * 256 / copy.num);
+	Fixed temp((float)this->num / (float)copy.num);
 	return (temp);
 }
 
-Fixed& Fixed::operator++(void)
+Fixed Fixed::operator++(void)
 {
 	this->num++;
 	return (*this);
+}
+
+Fixed Fixed::operator--(void)
+{
+	this->num--;
+	return (*this);
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed temp(*this);
+	this->num++;
+	return (temp);
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed temp(*this);
+	this->num--;
+	return (temp);
+}
+
+const Fixed& Fixed::min(const Fixed& copy1, const Fixed& copy2)
+{
+	return (copy1 < copy2 ? copy1 : copy2);
+}
+
+const Fixed& Fixed::max(const Fixed& copy1, const Fixed& copy2)
+{
+	return (copy1 > copy2 ? copy1 : copy2);
+}
+
+Fixed& Fixed::min(Fixed& copy1, Fixed& copy2)
+{
+	return (copy1 < copy2 ? copy1 : copy2);
+}
+
+Fixed& Fixed::max(Fixed& copy1, Fixed& copy2)
+{
+	return (copy1 > copy2 ? copy1 : copy2);
 }

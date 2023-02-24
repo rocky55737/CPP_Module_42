@@ -2,7 +2,7 @@ CC = clang++
 NAME = 02
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = 
+SRCS = ./Fixed.cpp ./main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

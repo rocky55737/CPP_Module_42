@@ -10,7 +10,7 @@ Fixed& Fixed::operator=(const Fixed& copy)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	this->num = copy.getRawBits();
-	return *this;
+	return (*this);
 }
 
 Fixed::Fixed(const Fixed& copy)

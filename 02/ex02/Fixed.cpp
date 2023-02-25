@@ -7,7 +7,7 @@ Fixed::Fixed() : num(0)
 Fixed& Fixed::operator=(const Fixed& copy)
 {
 	this->num = copy.getRawBits();
-	return *this;
+	return (*this);
 }
 
 Fixed::Fixed(const Fixed& copy)
@@ -103,13 +103,13 @@ Fixed Fixed::operator/(const Fixed& copy) const
 	return (temp);
 }
 
-Fixed Fixed::operator++(void)
+Fixed& Fixed::operator++(void)
 {
 	this->num++;
 	return (*this);
 }
 
-Fixed Fixed::operator--(void)
+Fixed& Fixed::operator--(void)
 {
 	this->num--;
 	return (*this);

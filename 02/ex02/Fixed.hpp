@@ -29,8 +29,8 @@ public:
 	Fixed operator-(const Fixed& copy) const;
 	Fixed operator*(const Fixed& copy) const;
 	Fixed operator/(const Fixed& copy) const;
-	Fixed operator++(void);
-	Fixed operator--(void);
+	Fixed& operator++(void);
+	Fixed& operator--(void);
 	Fixed operator++(int);
 	Fixed operator--(int);
 	static const Fixed& min(const Fixed& copy1, const Fixed& copy2);

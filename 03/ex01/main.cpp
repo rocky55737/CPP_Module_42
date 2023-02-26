@@ -19,4 +19,6 @@ int main() {
 	}
 	st3.beRepaired(10);
 	st4.beRepaired(30);
+	st3.guardGate();
+	return (0);
 }

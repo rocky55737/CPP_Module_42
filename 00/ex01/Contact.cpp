@@ -16,30 +16,40 @@ void	Contact::setContact()
 		case 0:
 			std::cout << "First name: ";
 			std::getline(std::cin, this->first_name);
+			if (std::cin.eof())
+				return ;
 			if (this->first_name.length() == 0)
 				null_flag = 1;
 			break;
 		case 1:
 			std::cout << "Last name: ";
 			std::getline(std::cin, this->last_name);
+			if (std::cin.eof())
+				return ;
 			if (this->last_name.length() == 0)
 				null_flag = 1;
 			break;
 		case 2:
 			std::cout << "Nickname: ";
 			std::getline(std::cin, this->nickname);
+			if (std::cin.eof())
+				return ;
 			if (this->nickname.length() == 0)
 				null_flag = 1;
 			break;
 		case 3:
 			std::cout << "Phone number: ";
 			std::getline(std::cin, this->phone_number);
+			if (std::cin.eof())
+				return ;
 			if (this->phone_number.length() == 0)
 				null_flag = 1;
 			break;
 		case 4:
 			std::cout << "Darkest secret: ";
 			std::getline(std::cin, this->darkest_secret);
+			if (std::cin.eof())
+				return ;
 			if (this->darkest_secret.length() == 0)
 				null_flag = 1;
 			break;

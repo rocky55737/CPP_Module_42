@@ -20,6 +20,8 @@ void	PhoneBook::pbInit()
 	{
 		std::cout << "1. ADD   2. SEARCH   3. EXIT" << std::endl;
 		std::getline(std::cin, cmd);
+		if (std::cin.eof())
+			return ;
 		if (cmd == "EXIT")
 			return;
 		if (cmd == "ADD")
@@ -75,10 +77,13 @@ void	PhoneBook::search()
 	int	index;
 
 	cmd = "search";
+	std::cout << "Insert the valid index or BACK" << std::endl;
 	this->showAll();
 	while (cmd != "BACK")
 	{
 		std::getline(std::cin, cmd);
+		if (std::cin.eof())
+			return ;
 		if (cmd == "BACK")
 			return;
 		if (this->checkValidIndex(cmd))

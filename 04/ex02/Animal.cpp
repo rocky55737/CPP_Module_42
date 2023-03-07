@@ -27,3 +27,8 @@ std::string& Animal::getType(void)
 {
 	return (this->type);
 }
+
+void makeSound()
+{
+	std::cout << this->type << " sounds aaaniiimaaal" << std::endl;
+}

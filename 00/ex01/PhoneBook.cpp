@@ -16,7 +16,7 @@ void	PhoneBook::pbInit()
 	std::string	cmd;
 
 	cmd = "started";
-	while (cmd != "EXIT")
+	while (cmd != "EXIT" && !std::cin.eof())
 	{
 		std::cout << "1. ADD   2. SEARCH   3. EXIT" << std::endl;
 		std::getline(std::cin, cmd);
@@ -95,9 +95,11 @@ void	PhoneBook::search()
 			std::cout << "nickname: " << this->contacts[index - 1].getNickName() << std::endl;
 			std::cout << "phone number: " << this->contacts[index - 1].getPhoneNumber() << std::endl;
 			std::cout << "darkest secret: " << this->contacts[index - 1].getDarkestSecret() << std::endl;
+			std::cout << "Insert the valid index or BACK" << std::endl;
 			continue;
 		}
 		std::cout << "invalid index err" << std::endl;
+		std::cout << "Insert the valid index or BACK" << std::endl;
 		showAll();
 	}
 }

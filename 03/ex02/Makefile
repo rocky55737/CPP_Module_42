@@ -1,4 +1,4 @@
-CC = clang++
+CC = c++
 NAME = 03
 CFLAGS = -Wall -Wextra -Werror -std
 

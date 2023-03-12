@@ -1,4 +1,4 @@
-CXX = clang++
+CXX = c++
 NAME = BraiiiiiiinnnzzzZ
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 

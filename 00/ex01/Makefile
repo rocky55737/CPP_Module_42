@@ -1,4 +1,4 @@
-CXX = clang++
+CXX = c++
 NAME = PhoneBook
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 

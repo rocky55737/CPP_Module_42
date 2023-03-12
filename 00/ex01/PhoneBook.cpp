@@ -20,6 +20,9 @@ void	PhoneBook::pbInit()
 	{
 		std::cout << "1. ADD   2. SEARCH   3. EXIT" << std::endl;
 		std::getline(std::cin, cmd);
+		if (std::cin.eof()) {
+			break ;
+		}
 		if (cmd == "EXIT")
 			return;
 		if (cmd == "ADD")

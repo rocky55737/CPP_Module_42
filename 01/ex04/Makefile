@@ -1,4 +1,4 @@
-CC = clang++
+CC = c++
 NAME = sed
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 

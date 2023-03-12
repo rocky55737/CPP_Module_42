@@ -78,10 +78,13 @@ void	PhoneBook::search()
 	int	index;
 
 	cmd = "search";
+	std::cout << "Insert the valid index or BACK" << std::endl;
 	this->showAll();
 	while (cmd != "BACK")
 	{
 		std::getline(std::cin, cmd);
+		if (std::cin.eof())
+			return ;
 		if (cmd == "BACK")
 			return;
 		if (this->checkValidIndex(cmd))

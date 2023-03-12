@@ -33,6 +33,14 @@ int main(int ac, char **av)
 	}
 	write_file.open(read_file_name += ".replace");
 	origin_word = av[2];
+	if (origin_word.length() = 0)
+	{
+		while (getline(read_file, read_line))
+			write_file << read_line << std::endl;
+		read_file.close();
+		write_file.close();
+		return (0);
+	}
 	replace_word = av[3];
 	while (getline(read_file, read_line))
 	{

@@ -1,5 +1,5 @@
 CC = c++
-NAME = 01
+NAME = a.out
 CFLAGS = -Wall -Wextra -Werror -std
 
 SRCS = ./ClapTrap.cpp ./ScavTrap.cpp ./main.cpp

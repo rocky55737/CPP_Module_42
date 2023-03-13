@@ -1,5 +1,5 @@
 CC = c++
-NAME = 00
+NAME = a.out
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = ./main.cpp ./Animal.cpp ./Cat.cpp ./Dog.cpp

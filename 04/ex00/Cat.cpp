@@ -1,11 +1,12 @@
 #include "Cat.hpp"
 
-Cat::Cat() : type("Cat")
+Cat::Cat()
 {
+	type = "Cat";
 	std::cout << "Cat deafult constructor called." << std::endl;
 }
 
-Cat::Cat(const Cat& copy) : Animal(const Animal& copy)
+Cat::Cat(const Cat& copy) : Animal(copy)
 {
 	std::cout << "Cat copy constructor called." << std::endl;
 }
@@ -17,12 +18,12 @@ Cat& Cat::operator=(const Cat& copy)
 	return (*this);
 }
 
-Cat::~Cat() : ~Animal()
+Cat::~Cat()
 {
 	std::cout << "Cat destructor called." << std::endl;
 }
 
-void Cat::makeSound()
+void Cat::makeSound() const
 {
 	std::cout << this->type << " sounds meow~~~~~~~~~~~" << std::endl;
 }

@@ -15,7 +15,8 @@ $(NAME): $(OBJS) $(HEADER)
 	$(CC) $(CFLAGS) -c $<
 
 clean :
-	rm -rf $(OBJS)
+	rm -rf $(OBJS);
+	rm -rf *.replace
 
 fclean : clean
 	rm -rf $(NAME)

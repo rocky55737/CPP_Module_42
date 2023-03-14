@@ -16,9 +16,8 @@ int main()
 		else
 			ani_arr[i] = new Cat();
 	}
-	delete[] ani_arr;
-	// for (int i = 0; i < 4; i++)
-	// 	delete ani_arr[i];
+	for (int i = 0; i < 4; i++)
+		delete ani_arr[i];
 
 	return (0);
 }

@@ -6,7 +6,7 @@ Dog::Dog()
 	std::cout << "Dog deafult constructor called." << std::endl;
 }
 
-Dog::Dog(const Dog& copy)
+Dog::Dog(const Dog& copy) : Animal(copy)
 {
 	std::cout << "Dog copy constructor called." << std::endl;
 }

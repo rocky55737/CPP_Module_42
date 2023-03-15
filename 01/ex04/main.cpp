@@ -44,7 +44,7 @@ int main(int ac, char **av)
 	replace_word = av[3];
 	while (getline(read_file, read_line))
 	{
-		while (read_line.find(origin_word) != -1)
+		while (read_line.find(origin_word) != (size_t)-1)
 		{
 			write_file << read_line.substr(0, read_line.find(origin_word)) << replace_word;
 			read_line = read_line.erase(0, read_line.find(origin_word) + origin_word.length());

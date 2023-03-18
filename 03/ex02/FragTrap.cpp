@@ -9,7 +9,7 @@ FragTrap::FragTrap() : ClapTrap()
 }
 FragTrap::FragTrap(const FragTrap& copy) : ClapTrap(copy)
 {
-	std::cout << "ScavTrap " << name << " is copied." << std::endl;
+	std::cout << "FragTrap " << name << " is copied." << std::endl;
 }
 
 FragTrap::FragTrap(const std::string& name) : ClapTrap(name)
@@ -33,6 +33,50 @@ FragTrap& FragTrap::operator=(const FragTrap& copy)
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap " << name << " is deleted." << std::endl;
+}
+
+void FragTrap::attack(const std::string& target)
+{
+	if (hit_points <= 0)
+	{
+		std::cout << "FragTrap " << name << " was crushed!" << std::endl;
+		return ;
+	}
+	if (!energy_points)
+	{
+		std::cout << "FragTrap " << name << " can't complete this work!" << std::endl;
+		return ;
+	}
+	energy_points--;
+	std::cout << "FragTrap " << name << " attacks " << target << ", causing " << attack_damage << " points of damage!" << std::endl;
+}
+
+void FragTrap::takeDamage(unsigned int amount)
+{
+	if (hit_points <= 0)
+	{
+		std::cout << "FragTrap " << name << " was crushed!" << std::endl;
+		return ;
+	}
+	hit_points -= amount;
+	std::cout << "FragTrap " << name << " takes " << amount << " of damage, so " << hit_points << " is left." << std::endl;
+}
+
+void FragTrap::beRepaired(unsigned int amount)
+{
+	if (hit_points <= 0)
+	{
+		std::cout << "FragTrap " << name << " was crushed!" << std::endl;
+		return ;
+	}
+	if (!energy_points)
+	{
+		std::cout << "FragTrap " << name << " can't complete this work!" << std::endl;
+		return ;
+	}
+	energy_points--;
+	hit_points += amount;
+	std::cout << "FragTrap " << name << " repairs " << amount << ", so " << hit_points << " is left." << std::endl;
 }
 
 void FragTrap::highFivesGuys(void)

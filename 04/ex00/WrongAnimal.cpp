@@ -23,7 +23,7 @@ WrongAnimal& WrongAnimal::operator=(const WrongAnimal& copy)
 	return (*this);
 }
 
-const std::string& WrongAnimal::getType(void) const
+std::string WrongAnimal::getType(void) const
 {
 	return (this->type);
 }

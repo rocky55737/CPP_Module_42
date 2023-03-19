@@ -14,7 +14,7 @@ public:
 	Cat& operator=(const Cat& copy);
 	~Cat();
 	void makeSound() const;
-	const Brain* getBrain() const;
+	Brain* getBrain() const;
 };
 
 #endif

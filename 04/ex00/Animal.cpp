@@ -23,7 +23,7 @@ Animal& Animal::operator=(const Animal& copy)
 	return (*this);
 }
 
-const std::string& Animal::getType(void) const
+std::string Animal::getType(void) const
 {
 	return (type);
 }

@@ -12,7 +12,7 @@ public:
 	Brain(const Brain& copy);
 	~Brain();
 	Brain& operator=(const Brain& copy);
-	std::string* getIdea();
+	const std::string* getIdea();
 };
 
 #endif

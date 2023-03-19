@@ -19,5 +19,7 @@ int main()
 	for (int i = 0; i < 4; i++)
 		delete ani_arr[i];
 
+	//Animal aa;
+
 	return (0);
 }

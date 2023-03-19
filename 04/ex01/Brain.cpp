@@ -26,7 +26,7 @@ Brain& Brain::operator=(const Brain& copy)
 	return (*this);
 }
 
-std::string* Brain::getIdea()
+const std::string* Brain::getIdea()
 {
 	return (this->ideas);
 }

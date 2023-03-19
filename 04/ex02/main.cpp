@@ -19,6 +19,12 @@ int main()
 	for (int i = 0; i < 4; i++)
 		delete ani_arr[i];
 
+	const Cat a;
+	const Cat b(a);
+	a.getBrain()->setIdea(1, "new!!");
+	std::cout << a.getBrain()->getIdea()[1] << std::endl;
+	std::cout << b.getBrain()->getIdea()[1] << std::endl;
+	
 	//Animal aa;
 
 	return (0);

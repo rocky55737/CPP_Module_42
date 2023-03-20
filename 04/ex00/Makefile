@@ -12,7 +12,7 @@ $(NAME): $(OBJS) $(HEADER)
 	$(CXX) $(CFLAGS) $(OBJS) -o $(NAME)
 
 %.o : %.cpp
-	$(CXX) -c $<
+	$(CXX) $(CFLAGS) -c $<
 
 clean :
 	rm -rf $(OBJS)

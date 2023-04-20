@@ -53,6 +53,8 @@ public:
 			GradeTooLowException(const std::string& err_bureaucrat_name);
 			virtual ~GradeTooLowException() throw(){};
 	};
+
+	void	signForm();
 };
 
 std::ostream& operator<<(std::ostream& out_stream, const Bureaucrat& bureaucrat);

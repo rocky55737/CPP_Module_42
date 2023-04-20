@@ -2,6 +2,7 @@
 # define FORM_CPP
 
 # include <iostream>
+# include "Bureaucrat.hpp"
 
 class Form
 {
@@ -12,16 +13,22 @@ private:
 	const int	grade_execute;
 public:
 	Form();
+	Form(std::string init_name, bool init_signed_flag, int init_grade_sign, int init_grade_execute);
 	Form(const Form& copy);
 	Form& operator=(const Form& copy);
 	~Form();
+	const std::string	getName();
+	bool	getSignedFlag();
+	const int	getGradeSign();
+	const int	getGradeExecute();
+	void	beSigned(const Bureaucrat& bureaucrat);
 
 	class GradeTooHighException : public std::exception {
 		private:
 			std::string error_message;
 		public:
 			const char* what() const throw();
-			GradeTooHighException(const std::string& err_bureaucrat_name);
+			GradeTooHighException(const std::string& err_form_name);
 			virtual ~GradeTooHighException() throw(){};
 	};
 	
@@ -30,7 +37,7 @@ public:
 			std::string error_message;
 		public:
 			const char* what() const throw();
-			GradeTooLowException(const std::string& err_bureaucrat_name);
+			GradeTooLowException(const std::string& err_form_name);
 			virtual ~GradeTooLowException() throw(){};
 	};
 };

@@ -23,7 +23,11 @@ int main()
 	std::cout << copy << std::endl;
 	copy = (Bureaucrat("copy", 5));
 	std::cout << copy << std::endl;
-	
+
+	Bureaucrat wrong_low("wrong_low", 200);
+	Bureaucrat wrong_high("wrong_high", 0);
+	std::cout << copy << std::endl;
+
 	std::cout << "-------------------" << std::endl;
 	std::cout << "Low exception test" << std::endl;
 	std::cout << "-------------------" << std::endl;

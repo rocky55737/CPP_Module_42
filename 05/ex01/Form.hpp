@@ -1,8 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/21 18:08:49 by rhong             #+#    #+#             */
+/*   Updated: 2023/04/21 19:29:40 by rhong            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FORM_CPP
 # define FORM_CPP
 
 # include <iostream>
 # include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
@@ -13,14 +27,14 @@ private:
 	const int	grade_execute;
 public:
 	Form();
-	Form(std::string init_name, bool init_signed_flag, int init_grade_sign, int init_grade_execute);
+	Form(std::string init_name, int init_grade_sign, int init_grade_execute);
 	Form(const Form& copy);
 	Form& operator=(const Form& copy);
 	~Form();
 	const std::string	getName();
 	bool	getSignedFlag();
-	const int	getGradeSign();
-	const int	getGradeExecute();
+	int	getGradeSign();
+	int	getGradeExecute();
 	void	beSigned(const Bureaucrat& bureaucrat);
 
 	class GradeTooHighException : public std::exception {

@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 17:28:32 by rhong             #+#    #+#             */
-/*   Updated: 2023/04/19 18:28:44 by rhong            ###   ########.fr       */
+/*   Updated: 2023/04/21 19:29:20 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 # define BUREAUCRAT_HPP
 
 # include <iostream>
+# include "Form.hpp"
 
 # define GRADE_HIGHST	1
 # define GRADE_LOWEST	150
 # define GRADE_DEAFALT	GRADE_LOWEST
+
+class Form;
 
 class Bureaucrat 
 {
@@ -53,8 +56,7 @@ public:
 			GradeTooLowException(const std::string& err_bureaucrat_name);
 			virtual ~GradeTooLowException() throw(){};
 	};
-
-	void	signForm();
+	void	signForm(Form& form);
 };
 
 std::ostream& operator<<(std::ostream& out_stream, const Bureaucrat& bureaucrat);

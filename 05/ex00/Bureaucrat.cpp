@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 17:28:02 by rhong             #+#    #+#             */
-/*   Updated: 2023/04/19 18:56:43 by rhong            ###   ########.fr       */
+/*   Updated: 2023/04/21 15:44:40 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,14 @@ Bureaucrat::Bureaucrat() : name("Default"), grade(GRADE_DEAFALT)
 
 Bureaucrat::Bureaucrat(const std::string& init_name, int init_grade) : name(init_name), grade(init_grade)
 {
-	if (this->grade > 150) {
-		throw GradeTooLowException(this->name);
-	} else if (this->grade < 1) {
-		throw GradeTooHighException(this->name);
-	}
 	std::cout << "Bureaucrat constructor called." << std::endl;
+	if (this->grade > 150) {
+		std::cerr << init_name << " was not constructed!" << std::endl;
+		throw GradeTooLowException(init_name);
+	} else if (this->grade < 1) {
+		std::cerr << init_name << " was not constructed!" << std::endl;
+		throw GradeTooHighException(init_name);
+	}
 	std::cout << "name: " << this->name << ", grade: " << this->grade << std::endl;
 	std::cout << std::endl;
 }

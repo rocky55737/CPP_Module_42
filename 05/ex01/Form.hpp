@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:08:49 by rhong             #+#    #+#             */
-/*   Updated: 2023/04/21 19:29:40 by rhong            ###   ########.fr       */
+/*   Updated: 2023/04/21 21:46:16 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ public:
 	Form(const Form& copy);
 	Form& operator=(const Form& copy);
 	~Form();
-	const std::string	getName();
-	bool	getSignedFlag();
-	int	getGradeSign();
-	int	getGradeExecute();
+	const std::string	getName() const;
+	bool	getSignedFlag() const;
+	int	getGradeSign() const;
+	int	getGradeExecute() const;
 	void	beSigned(const Bureaucrat& bureaucrat);
 
 	class GradeTooHighException : public std::exception {

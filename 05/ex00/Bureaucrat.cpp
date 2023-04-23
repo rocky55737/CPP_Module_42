@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 17:28:02 by rhong             #+#    #+#             */
-/*   Updated: 2023/04/21 15:44:40 by rhong            ###   ########.fr       */
+/*   Updated: 2023/04/23 20:40:16 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,5 +109,5 @@ const char* Bureaucrat::GradeTooLowException::what() const throw(){
 }
 
 std::ostream& operator<<(std::ostream& out_stream, const Bureaucrat& bureaucrat) {
-	return (out_stream << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << std::endl); 
+	return (out_stream << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade()); 
 }

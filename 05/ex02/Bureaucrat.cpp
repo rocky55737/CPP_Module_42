@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 17:28:02 by rhong             #+#    #+#             */
-/*   Updated: 2023/04/23 17:49:50 by rhong            ###   ########.fr       */
+/*   Updated: 2023/04/23 20:39:08 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,35 +109,32 @@ const char* Bureaucrat::GradeTooLowException::what() const throw(){
 }
 
 std::ostream& operator<<(std::ostream& out_stream, const Bureaucrat& bureaucrat) {
-	return (out_stream << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << std::endl); 
+	return (out_stream << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade()); 
 }
 
 void	Bureaucrat::signForm(AForm& form)
 {
-	if (form.getSignedFlag())
-	{
-		std::cout << this->name << " couldn't sign " << form.getName() << " because " << form.getName() << " was already signed" << std::endl;
-	}
-	else if (this->grade > form.getGradeSign())
-	{
-		std::cout << this->name << " couldn't sign " << form.getName() << " because " << form.getName() << " can be signed by equal or higher than " << form.getGradeSign() << std::endl;
-	}
-	else
+	try
 	{
 		form.beSigned(*this);
 		std::cout << this->name << " signed " << form.getName() << std::endl;
 	}
+	catch (const std::exception& e)
+	{
+		std::cout << this->name << " couldn't sign " << form.getName() << " because the err occured." << std::endl;
+		std::cerr << e.what() << std::endl;
+	}
 }
 
-void	executeForm(AForm const & form)
+void	Bureaucrat::executeForm(AForm const & form)
 {
 	try
 	{
-		form.execute(*this);
-		std::cout << this->name << " executed " << form.getName() << std::endl;
+		execute(*this);
+		std::cout << name_ << " executed " << form.getName() << std::endl;
 	}
-	catch (exception& e)
+	catch (const std::exception& e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << "Bureaucrat: executeForm: " << e.what() << std::endl;
 	}
 }

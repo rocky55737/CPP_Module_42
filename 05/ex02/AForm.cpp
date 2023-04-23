@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/23 16:01:58 by rhong             #+#    #+#             */
-/*   Updated: 2023/04/23 16:15:39 by rhong            ###   ########.fr       */
+/*   Created: 2023/04/23 19:35:58 by rhong             #+#    #+#             */
+/*   Updated: 2023/04/23 20:38:51 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,16 @@ AForm::GradeTooLowException::GradeTooLowException(const std::string& err_form_na
 	this->error_message = "Form: Grade Too Low Exception: " + err_form_name;
 }
 
+AForm::SignedAlreadyException::SignedAlreadyException(const std::string& err_form_name)
+{
+	this->error_message = "Form: Is signed already: " + err_form_name;
+}
+
+AForm::SignedAlreadyException::NotSignedException(const std::string& err_form_name)
+{
+	this->error_message = "Form: Is not signed: " + err_form_name;
+}
+
 const char* AForm::GradeTooHighException::what() const throw(){
 	return (this->error_message.c_str());
 }
@@ -90,15 +100,24 @@ const char* AForm::GradeTooLowException::what() const throw(){
 	return (this->error_message.c_str());
 }
 
+const char* AForm::SignedAlreadyException::what() const throw(){
+	return (this->error_message.c_str());
+}
+
+const char* AForm::NotSignedException::what() const throw(){
+	return (this->error_message.c_str());
+}
+
 std::ostream& operator<<(std::ostream& out_stream, const AForm& form) {
-	return (out_stream << "name: " << form.getName() << ", signed flag: " << form.getSignedFlag() << ", grade sign: " << form.getGradeSign() << ", grade execute: " << form.getGradeExecute() << std::endl); 
+	return (out_stream << "name: " << form.getName() << ", signed flag: " << form.getSignedFlag() << ", grade sign: " << form.getGradeSign() << ", grade execute: " << form.getGradeExecute()); 
 }
 
 void	AForm::beSigned(const Bureaucrat& bureaucrat)
 {
+	if (this->signed_flag)
+		throw SignedAlreadyException(this->name);
 	if (this->grade_sign < bureaucrat.getGrade())
-	{
 		throw GradeTooLowException(this->name);
-	}
 	this->signed_flag = true;
 }
+

@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:08:40 by rhong             #+#    #+#             */
-/*   Updated: 2023/04/23 17:52:40 by rhong            ###   ########.fr       */
+/*   Updated: 2023/04/23 20:39:47 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ const char* Form::SignedAlreadyException::what() const throw(){
 }
 
 std::ostream& operator<<(std::ostream& out_stream, const Form& form) {
-	return (out_stream << "name: " << form.getName() << ", signed flag: " << form.getSignedFlag() << ", grade sign: " << form.getGradeSign() << ", grade execute: " << form.getGradeExecute() << std::endl); 
+	return (out_stream << "name: " << form.getName() << ", signed flag: " << form.getSignedFlag() << ", grade sign: " << form.getGradeSign() << ", grade execute: " << form.getGradeExecute()); 
 }
 
 void	Form::beSigned(const Bureaucrat& bureaucrat)

@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 19:47:45 by rhong             #+#    #+#             */
-/*   Updated: 2023/04/23 20:36:26 by rhong            ###   ########.fr       */
+/*   Updated: 2025/05/07 15:39:22 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,7 @@ public:
 	ShrubberyCreationForm(const ShrubberyCreationForm &copy);
 	virtual ~ShrubberyCreationForm();
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm &copy);
-	const std::string& getTarget() const;
 	virtual void execute(const Bureaucrat& executor) const;
 };
-
-std::ostream& operator<<(std::ostream& out_stream, const ShrubberyCreationForm& form);
 
 #endif

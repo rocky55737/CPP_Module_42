@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/23 20:55:54 by rhong             #+#    #+#             */
-/*   Updated: 2025/05/07 16:01:49 by rhong            ###   ########.fr       */
+/*   Created: 2025/05/07 16:33:04 by rhong             #+#    #+#             */
+/*   Updated: 2025/05/07 17:00:47 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-# define	ROBOTOMYREQUESTFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
 
 # include "AForm.hpp"
 
-class RobotomyRequestForm : public AForm
+class PresidentialPardonForm : public AForm
 {
 private:
     std::string target;
 public:
-    RobotomyRequestForm();
-    RobotomyRequestForm(const std::string &init_target);
-    RobotomyRequestForm(const RobotomyRequestForm &copy);
-	virtual ~RobotomyRequestForm();
-    RobotomyRequestForm& operator=(const RobotomyRequestForm &copy);
+    PresidentialPardonForm();
+    PresidentialPardonForm(const std::string &init_target);
+    PresidentialPardonForm(const PresidentialPardonForm &copy);
+	virtual ~PresidentialPardonForm();
+    PresidentialPardonForm& operator=(const PresidentialPardonForm &copy);
 	virtual void execute(const Bureaucrat& executor) const;
 };
 

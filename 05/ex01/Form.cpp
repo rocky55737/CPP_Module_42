@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:08:40 by rhong             #+#    #+#             */
-/*   Updated: 2025/05/07 14:12:24 by rhong            ###   ########.fr       */
+/*   Updated: 2025/05/07 15:14:02 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Form::Form(const Form& copy): name(copy.name), grade_sign(copy.grade_sign), grad
 {
 	*this = copy;
 	std::cout << "Form copy constructor called" << std::endl;
-	std::cout << "name: " << this->name << ", signed flag: " << this->signed_flag << ", grade sign: " << this->grade_sign << ", grade execute: " << this->grade_execute << std::endl;
+	std::cout << *this;
 	std::cout << std::endl;
 }
 

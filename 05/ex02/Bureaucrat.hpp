@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 17:28:32 by rhong             #+#    #+#             */
-/*   Updated: 2023/04/23 19:32:48 by rhong            ###   ########.fr       */
+/*   Updated: 2025/05/07 14:48:24 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 # define BUREAUCRAT_HPP
 
 # include <iostream>
-# include "AForm.hpp"
 
-# define GRADE_HIGHST	1
+# define GRADE_HIGHEST	1
 # define GRADE_LOWEST	150
-# define GRADE_DEAFALT	GRADE_LOWEST
+# define GRADE_DEFAULT	GRADE_LOWEST
 
 class AForm;
 

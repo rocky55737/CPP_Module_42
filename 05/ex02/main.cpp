@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 17:39:46 by rhong             #+#    #+#             */
-/*   Updated: 2025/05/07 17:43:55 by rhong            ###   ########.fr       */
+/*   Updated: 2025/05/07 18:00:00 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int main() {
     {
         std::cerr << e.what() << std::endl;
     }
+    std::cout << std::endl;
 
     try 
     {
@@ -43,6 +44,7 @@ int main() {
     {
         std::cerr << e.what() << std::endl;
     }
+    std::cout << std::endl;
 
     try {
         low.signForm(robot);
@@ -51,6 +53,7 @@ int main() {
     {
         std::cerr << e.what() << std::endl;
     }
+    std::cout << std::endl;
 
     try {
         high.signForm(robot);
@@ -59,6 +62,7 @@ int main() {
     {
         std::cerr << e.what() << std::endl;
     }
+    std::cout << std::endl;
 
     try
     {
@@ -68,6 +72,7 @@ int main() {
     {
         std::cerr << e.what() << std::endl;
     }
+    std::cout << std::endl;
 
     try
     {
@@ -77,6 +82,7 @@ int main() {
     {
         std::cerr << e.what() << std::endl;
     }
+    std::cout << std::endl;
 
     std::cout << "\n--- Executing Forms ---" << std::endl;
 
@@ -88,6 +94,7 @@ int main() {
     {
         std::cerr << e.what() << std::endl;
     }
+    std::cout << std::endl;
 
     try
     {
@@ -97,6 +104,7 @@ int main() {
     {
         std::cerr << e.what() << std::endl;
     }
+    std::cout << std::endl;
 
     try
     {
@@ -106,6 +114,7 @@ int main() {
     {
         std::cerr << e.what() << std::endl;
     }
+    std::cout << std::endl;
 
     try
     {
@@ -115,6 +124,7 @@ int main() {
     {
         std::cerr << e.what() << std::endl;
     }
+    std::cout << std::endl;
 
     try
     {
@@ -124,6 +134,7 @@ int main() {
     {
         std::cerr << e.what() << std::endl;
     }
+    std::cout << std::endl;
 
     try
     {

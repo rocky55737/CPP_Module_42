@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 17:28:02 by rhong             #+#    #+#             */
-/*   Updated: 2025/05/07 13:46:35 by rhong            ###   ########.fr       */
+/*   Updated: 2025/05/07 14:20:00 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 Bureaucrat::Bureaucrat() : name("Default"), grade(GRADE_DEFAULT)
 {
 	std::cout << "Bureaucrat default constructor called." << std::endl;
-	std::cout << "name: " << this->name << ", grade: " << this->grade << std::endl;
+	std::cout << *this;
 	std::cout << std::endl;
 }
 
@@ -30,7 +30,7 @@ Bureaucrat::Bureaucrat(const std::string& init_name, int init_grade) : name(init
 		std::cerr << init_name << " was not constructed!" << std::endl;
 		throw GradeTooHighException(init_name);
 	}
-	std::cout << "name: " << this->name << ", grade: " << this->grade << std::endl;
+	std::cout << *this;
 	std::cout << std::endl;
 }
 
@@ -38,13 +38,16 @@ Bureaucrat::Bureaucrat(const Bureaucrat& copy) : name(copy.name)
 {
 	*this = copy;
 	std::cout << "Bureaucrat copy constructor called." << std::endl;
-	std::cout << "name: " << this->name << ", grade: " << this->grade << std::endl;
+	std::cout << *this;
 	std::cout << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& copy)
 {
-	this->grade = copy.grade;
+	if (this != &copy)
+	{
+		this->grade = copy.grade;
+	}
 	std::cout << "Bureaucrat assignment called." << std::endl;
 	std::cout << std::endl;
 	return (*this);
@@ -78,7 +81,7 @@ void	Bureaucrat::incrementGrade()
 		throw GradeTooHighException(this->name);
 	}
 	--this->grade;
-	std::cout << "name: " << this->name << ", grade: " << this->grade << std::endl;
+	std::cout << *this;
 	std::cout << std::endl;
 }
 
@@ -89,7 +92,7 @@ void	Bureaucrat::decrementGrade()
 		throw GradeTooLowException(this->name);
 	}
 	++this->grade;
-	std::cout << "name: " << this->name << ", grade: " << this->grade << std::endl;
+	std::cout << *this;
 	std::cout << std::endl;
 }
 
@@ -110,7 +113,7 @@ const char* Bureaucrat::GradeTooLowException::what() const throw(){
 }
 
 std::ostream& operator<<(std::ostream& out_stream, const Bureaucrat& bureaucrat) {
-	return (out_stream << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade()); 
+	return (out_stream << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << "." << std::endl); 
 }
 
 void	Bureaucrat::signForm(Form& form)

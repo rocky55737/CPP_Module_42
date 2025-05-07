@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:08:40 by rhong             #+#    #+#             */
-/*   Updated: 2025/05/07 13:41:50 by rhong            ###   ########.fr       */
+/*   Updated: 2025/05/07 14:12:24 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 Form::Form(): name("Default"), signed_flag(false), grade_sign(GRADE_DEFAULT), grade_execute(GRADE_DEFAULT)
 {
 	std::cout << "Form default constructor called." << std::endl;
-	std::cout << *this << std::endl;
+	std::cout << *this;
 	std::cout << std::endl;
 }
 
@@ -27,7 +27,7 @@ Form::Form(std::string init_name, int init_grade_sign, int init_grade_execute): 
 	if (this->grade_sign > 150 || this->grade_execute > GRADE_LOWEST)
 		throw GradeTooLowException(this->name);
 	std::cout << "Form constructor called" << std::endl;
-	std::cout << "name: " << this->name << ", signed flag: " << this->signed_flag << ", grade sign: " << this->grade_sign << ", grade execute: " << this->grade_execute << std::endl;
+	std::cout << *this;
 	std::cout << std::endl;
 }
 
@@ -101,7 +101,7 @@ const char* Form::SignedAlreadyException::what() const throw(){
 }
 
 std::ostream& operator<<(std::ostream& out_stream, const Form& form) {
-	return (out_stream << "name: " << form.getName() << ", signed flag: " << form.getSignedFlag() << ", grade sign: " << form.getGradeSign() << ", grade execute: " << form.getGradeExecute()); 
+	return (out_stream << "name: " << form.getName() << ", signed flag: " << form.getSignedFlag() << ", grade sign: " << form.getGradeSign() << ", grade execute: " << form.getGradeExecute() << std::endl); 
 }
 
 void	Form::beSigned(const Bureaucrat& bureaucrat)

@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 17:39:46 by rhong             #+#    #+#             */
-/*   Updated: 2025/05/07 18:00:00 by rhong            ###   ########.fr       */
+/*   Updated: 2025/05/07 18:18:18 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,38 @@ int main() {
     ShrubberyCreationForm shrub("Garden");
     RobotomyRequestForm robot("Bender");
     PresidentialPardonForm pardon("Rick");
+
+
+    std::cout << "\n--- Excuting Unsigned Forms ---" << std::endl;
+    try
+    {
+        high.executeForm(shrub);
+    }
+    catch (std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << std::endl;
+
+    try
+    {
+        high.executeForm(robot);
+    }
+    catch (std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << std::endl;
+
+    try
+    {
+        high.executeForm(pardon);
+    }
+    catch (std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << std::endl;
 
     std::cout << "\n--- Signing Forms ---" << std::endl;
 

@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 17:28:02 by rhong             #+#    #+#             */
-/*   Updated: 2025/05/07 15:41:05 by rhong            ###   ########.fr       */
+/*   Updated: 2025/05/07 18:13:41 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,6 +139,7 @@ void	Bureaucrat::executeForm(AForm const & form)
 	}
 	catch (const std::exception& e)
 	{
-		std::cerr << "Bureaucrat: executeForm: " << e.what() << std::endl;
+		std::cerr << name << " coudn't execute " << form.getName() << " because following err occured." << std::endl; 
+		std::cerr << e.what() << std::endl;
 	}
 }

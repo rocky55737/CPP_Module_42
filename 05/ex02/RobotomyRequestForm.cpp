@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 16:02:10 by rhong             #+#    #+#             */
-/*   Updated: 2025/05/07 16:31:31 by rhong            ###   ########.fr       */
+/*   Updated: 2025/05/07 18:06:47 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void RobotomyRequestForm::execute(const Bureaucrat& executor) const
 {
 	checkExecutable(executor);
 	
-	std::cout << "...%kind of drilling noises%...";
+	std::cout << "...%kind of drilling noises%..." << std::endl;
 	std::srand(static_cast<unsigned int>(std::time(NULL)));
 	int success = std::rand() % 2;
 	if (success)

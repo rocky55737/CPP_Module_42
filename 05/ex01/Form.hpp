@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:08:49 by rhong             #+#    #+#             */
-/*   Updated: 2023/04/23 19:27:18 by rhong            ###   ########.fr       */
+/*   Updated: 2025/05/07 13:33:36 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FORM_CPP
 
 # include <iostream>
-# include "Bureaucrat.hpp"
 
 class Bureaucrat;
 

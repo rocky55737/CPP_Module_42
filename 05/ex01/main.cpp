@@ -6,11 +6,12 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:08:31 by rhong             #+#    #+#             */
-/*   Updated: 2023/04/23 19:28:53 by rhong            ###   ########.fr       */
+/*   Updated: 2025/05/07 13:33:38 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 int main()
 {

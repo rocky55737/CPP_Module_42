@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 18:52:51 by rhong             #+#    #+#             */
-/*   Updated: 2025/05/08 13:03:29 by rhong            ###   ########.fr       */
+/*   Updated: 2025/05/08 13:16:53 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ Intern& Intern::operator=(const Intern& copy)
     (void)copy;
     std::cout << "Intern assignment called." << std::endl;
 	std::cout << std::endl;
+	return *this;
 }
 
 static AForm* createShrubbery(const std::string& target) {
@@ -75,8 +76,7 @@ AForm* Intern::makeForm(const std::string& form_name, const std::string& form_ta
 			return form_creators[i](form_target);
 		}
 	}
-
-	
+	throw FormNotFoundException(form_name);
 	return NULL;
 }
 

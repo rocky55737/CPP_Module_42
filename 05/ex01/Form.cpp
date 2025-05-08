@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:08:40 by rhong             #+#    #+#             */
-/*   Updated: 2025/05/07 15:14:02 by rhong            ###   ########.fr       */
+/*   Updated: 2025/05/08 16:28:43 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ Form::~Form()
 	std::cout << std::endl;
 }
 
-const std::string	Form::getName() const
+const std::string&	Form::getName() const
 {
 	return (this->name);
 }

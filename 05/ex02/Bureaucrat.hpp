@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 17:28:32 by rhong             #+#    #+#             */
-/*   Updated: 2025/05/07 14:48:24 by rhong            ###   ########.fr       */
+/*   Updated: 2025/05/08 16:27:18 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
 	Bureaucrat(const Bureaucrat& copy);
 	Bureaucrat& operator=(const Bureaucrat& copy);
 	~Bureaucrat();
-	const std::string	getName() const;
+	const std::string&	getName() const;
 	int	getGrade() const;
 	void	setGrade(const int set_grade); 
 	void	incrementGrade();

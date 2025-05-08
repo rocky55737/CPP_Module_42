@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 19:34:45 by rhong             #+#    #+#             */
-/*   Updated: 2025/05/07 15:53:03 by rhong            ###   ########.fr       */
+/*   Updated: 2025/05/08 16:28:58 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
 	AForm(const AForm& copy);
 	AForm& operator=(const AForm& copy);
 	virtual ~AForm();
-	const std::string	getName() const;
+	const std::string&	getName() const;
 	bool	getSignedFlag() const;
 	int	getGradeSign() const;
 	int	getGradeExecute() const;

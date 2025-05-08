@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 17:28:02 by rhong             #+#    #+#             */
-/*   Updated: 2025/05/08 13:00:19 by rhong            ###   ########.fr       */
+/*   Updated: 2025/05/08 16:26:56 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ Bureaucrat::~Bureaucrat()
 	std::cout << std::endl;
 }
 
-const std::string	Bureaucrat::getName() const
+const std::string&	Bureaucrat::getName() const
 {
 	return (this->name);
 }

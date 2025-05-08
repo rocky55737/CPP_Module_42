@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 17:28:02 by rhong             #+#    #+#             */
-/*   Updated: 2025/05/07 14:20:15 by rhong            ###   ########.fr       */
+/*   Updated: 2025/05/08 13:01:25 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ Bureaucrat::GradeTooHighException::GradeTooHighException(const std::string& err_
 }
 
 Bureaucrat::GradeTooLowException::GradeTooLowException(const std::string& err_bureaucrat_name) {
-	this->error_message = "Grade Too Low Exception: " + err_bureaucrat_name;;
+	this->error_message = "Grade Too Low Exception: " + err_bureaucrat_name;
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw(){

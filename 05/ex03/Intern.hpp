@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 18:34:28 by rhong             #+#    #+#             */
-/*   Updated: 2025/05/08 12:13:58 by rhong            ###   ########.fr       */
+/*   Updated: 2025/05/08 13:05:45 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ public:
 			std::string error_message;
 		public:
 			const char* what() const throw();
-			FormNotFoundException(const std::string& err_bureaucrat_name);
+			FormNotFoundException(const std::string& err_form_name);
 			virtual ~FormNotFoundException() throw(){};
     };
 };

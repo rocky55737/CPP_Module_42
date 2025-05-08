@@ -6,7 +6,7 @@
 /*   By: rhong <rhong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 18:52:51 by rhong             #+#    #+#             */
-/*   Updated: 2025/05/08 12:17:07 by rhong            ###   ########.fr       */
+/*   Updated: 2025/05/08 13:03:29 by rhong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,13 @@ AForm* Intern::makeForm(const std::string& form_name, const std::string& form_ta
 
 	
 	return NULL;
+}
+
+Intern::FormNotFoundException::FormNotFoundException(const std::string& err_form_name)
+{
+	this->error_message = "Intern: FormNotFoundException: " + err_form_name;
+}
+
+const char* Intern::FormNotFoundException::what() const throw(){
+	return (this->error_message.c_str());
 }

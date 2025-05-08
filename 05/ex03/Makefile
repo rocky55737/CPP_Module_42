@@ -2,7 +2,7 @@ CXX = c++
 NAME = a.out
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = ./megaphone.cpp
+SRCS = ./main.cpp ./Bureaucrat.cpp ./AForm.cpp ./PersidentialPerdonForm.cpp ./RobotomyRequestForm.cpp ./ShrubberyCreationForm.cpp ./Intern.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
